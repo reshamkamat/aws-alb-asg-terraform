@@ -31,30 +31,32 @@ terraform destroy
 
 # AWS ALB + Auto Scaling Group using Terraform
 
-## Architecture Diagram
+Architecture Diagram
 
 
-
-           Internet
-               |
-               |
-        +----------------+
-        | Application    |
-        | Load Balancer  |
-        +----------------+
-               |
-               |
-          Target Group
-               |
-       -------------------
-       |                 |
-+-------------+   +-------------+
-| EC2 Instance|   | EC2 Instance|
-|   (Nginx)   |   |   (Nginx)   |
-+-------------+   +-------------+
-        \             /
-         \           /
-        Auto Scaling Group
+                Internet
+                    |
+                    |
+            +-------------------+
+            | Application Load  |
+            |     Balancer      |
+            +-------------------+
+                    |
+                    |
+               Target Group
+                    |
+        -----------------------------
+        |                           |
++-------------------+       +-------------------+
+|   EC2 Instance    |       |   EC2 Instance    |
+|      (Nginx)      |       |      (Nginx)      |
++-------------------+       +-------------------+
+         \                         /
+          \                       /
+           +---------------------+
+           |   Auto Scaling      |
+           |       Group         |
+           +---------------------+
 
 
 
