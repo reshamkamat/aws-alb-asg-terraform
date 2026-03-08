@@ -27,3 +27,43 @@ terraform init
 terraform plan
 terraform apply
 terraform destroy
+
+
+# AWS ALB + Auto Scaling Group using Terraform
+
+## Architecture Diagram
+
+
+           Internet
+               |
+               |
+        +----------------+
+        | Application    |
+        | Load Balancer  |
+        +----------------+
+               |
+               |
+          Target Group
+               |
+       -------------------
+       |                 |
++-------------+   +-------------+
+| EC2 Instance|   | EC2 Instance|
+|   (Nginx)   |   |   (Nginx)   |
++-------------+   +-------------+
+        \             /
+         \           /
+        Auto Scaling Groups
+
+
+## Load Balancing Verification
+
+The Application Load Balancer distributes incoming traffic across multiple EC2 instances.
+
+### Response from Instance 1
+![ALB Instance 1](images/alb-loadbalancer-instance1.png)
+
+### Response from Instance 2
+![ALB Instance 2](images/alb-loadbalancer-instance2.png)
+
+Refreshing the browser returns different hostnames, demonstrating that the Application Load Balancer distributes traffic across instances in the Auto Scaling Group.
