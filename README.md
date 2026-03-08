@@ -34,6 +34,7 @@ terraform destroy
 ## Architecture Diagram
 
 
+
            Internet
                |
                |
@@ -53,7 +54,10 @@ terraform destroy
 +-------------+   +-------------+
         \             /
          \           /
-        Auto Scaling Groups
+        Auto Scaling Group
+
+
+
 
 
 ## Load Balancing Verification
