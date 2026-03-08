@@ -90,11 +90,9 @@ The Application Load Balancer distributes incoming traffic across multiple EC2 i
 
 Refreshing the browser returns different hostnames, demonstrating that the Application Load Balancer distributes traffic across instances in the Auto Scaling Group.
 
+## Architecture Diagram
 
-# Architecture Diagram
-
-
-
+```
                 Internet
                     |
                     |
@@ -118,3 +116,4 @@ Refreshing the browser returns different hostnames, demonstrating that the Appli
            |   Auto Scaling      |
            |       Group         |
            +---------------------+
+```
